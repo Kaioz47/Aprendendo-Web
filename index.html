@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aprendendo Web</title>
+  <meta name="description" content="Aprenda HTML, CSS e JavaScript com exemplos práticos, quiz interativo e dicas do Kaio e do Marcio." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#home">Pular para conteúdo</a>
+
+  <!-- ========================== HEADER ========================== -->
+  <header class="topbar" role="banner" aria-label="Barra de navegação principal">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <h1>Aprendendo Web</h1>
+    </div>
+    <nav aria-label="Navegação">
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <ul class="menu">
+        <li><a href="#home" class="navlink active">Início</a></li>
+        <li><a href="#conceitos" class="navlink">Conceitos</a></li>
+        <li><a href="#exemplos" class="navlink">Exemplos</a></li>
+        <li><a href="#quiz" class="navlink">Quiz</a></li>
+        <li><a href="#contato" class="navlink">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button id="toggleDark" class="btn ghost" aria-pressed="false" title=
+      <button id="speakBtn" class="btn ghost" title=
+    </div>
+  </header>
+
+  <!-- ========================== HERO ========================== -->
+  <main id="home">
+    <section class="hero" aria-label="Seção principal">
+      <div class="hero-text">
+        <h2>Construa do zero com <span class="highlight">HTML</span>, dê estilo com <span class="highlight">CSS</span> e dê vida com <span class="highlight">JavaScript</span>!</h2>
+        <p>Este site foi feito para você aprender brincando. Explore, clique, rode exemplos e teste seus conhecimentos.</p>
+        <div class="hero-cta">
+          <a href="#conceitos" class="btn primary">Começar Agora</a>
+          <a href="#exemplos" class="btn">Ver Exemplos</a>
+        </div>
+      </div>
+      <div class="characters">
+        <figure class="character" id="kaio">
+          
+          <figcaption class="speech" data-voice="Kaio">
+             Oi, eu sou o Kaio! Vamos aprender <strong>HTML</strong>!
+          </figcaption>
+        </figure>
+        <figure class="character" id="marcio">
+          
+          <figcaption class="speech" data-voice="Marcio">
+              Eu sou o Marcio e vou te mostrar <strong>CSS</strong> e <strong>JavaScript</strong>!
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========================== CONCEITOS ========================== -->
+    <section id="conceitos" class="card section" aria-label="Conceitos de HTML, CSS e JavaScript">
+      <h3>Conceitos</h3>
+      <p>Clique em um botão e veja a explicação com efeito de digitação.</p>
+      <div class="btn-row">
+        <button class="btn tag" data-concept="html">O que é HTML?</button>
+        <button class="btn tag" data-concept="css">O que é CSS?</button>
+        <button class="btn tag" data-concept="js">O que é JavaScript?</button>
+        <!-- NOVA IDEIA: botão extra -->
+        <button class="btn tag" data-concept="dom">O que é DOM?</button>
+      </div>
+      <div id="conceptBox" class="concept-box" aria-live="polite"></div>
+    </section>
+
+    <!-- ========================== EXEMPLOS ========================== -->
+    <!-- ========================== EXEMPLOS ========================== -->
+<section id="exemplos" class="card section exemplos" aria-label="Exemplos práticos com editor">
+  <h3>Exemplos Práticos</h3>
+  <p>Edite os códigos abaixo e clique em <strong>Executar</strong> para ver o resultado ao vivo.</p>
+
+  <div class="editor-grid">
+    <div class="pane">
+      <span class="pane-title">HTML</span>
+      <textarea id="htmlCode" spellcheck="false">&lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+&lt;p&gt;Este é um exemplo com &lt;strong&gt;HTML&lt;/strong&gt;.&lt;/p&gt;
+&lt;button id="btnEx"&gt;Clique em mim&lt;/button&gt;</textarea>
+    </div>
+    <div class="pane">
+      <span class="pane-title">CSS</span>
+      <textarea id="cssCode" spellcheck="false">body{
+  font-family:Poppins,system-ui,Arial,sans-serif;
+  background:#282c34;
+  color:#fff;
+}
+h1{margin:0 0 8px;color:#fff}
+p{opacity:.9}
+button{
+  padding:.5rem 1rem;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+  background:#61dafb;
+  color:#000;
+  font-weight:bold;
+  transition:.2s;
+}
+button:hover{background:#21a1f1}</textarea>
+    </div>
+    <div class="pane">
+      <span class="pane-title">JavaScript</span>
+      <textarea id="jsCode" spellcheck="false">document.getElementById('btnEx').addEventListener('click',()=>{
+  alert('Você clicou no botão!');
+});</textarea>
+    </div>
+  </div>
+
+  <div class="editor-actions">
+    <button id="runCode" class="btn primary">▶ Executar</button>
+    <button id="resetCode" class="btn">🔄 Restaurar</button>
+    <button id="copyAll" class="btn ghost">📋 Copiar Tudo</button>
+  </div>
+
+  <div class="preview-box">
+    <h4>Pré-visualização</h4>
+    <iframe id="preview" title="Pré-visualização do código" sandbox="allow-scripts" class="preview"></iframe>
+  </div>
+</section>
+
+
+    <!-- ========================== QUIZ ========================== -->
+    <section id="quiz" class="card section" aria-label="Quiz interativo">
+      <h3>Quiz do Conhecimento</h3>
+      <p>Teste seus conhecimentos! Você recebe feedback imediato para cada resposta.</p>
+      <div id="quizBox" class="quiz"></div>
+      <div class="quiz-actions">
+        <button id="restartQuiz" class="btn">Reiniciar Quiz</button>
+      </div>
+      <!-- NOVA IDEIA: progresso -->
+      <div class="quiz-progress">
+        <progress id="quizProgress" value="0" max="100"></progress>
+      </div>
+    </section>
+
+    <!-- ========================== CONTATO ========================== -->
+    <section id="contato" class="card section" aria-label="Formulário de contato">
+      <h3>Fale com a Gente</h3>
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <label>Nome
+            <input type="text" name="nome" required minlength="2" placeholder="Seu nome" />
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="seu@email.com" />
+          </label>
+          <label>Mensagem
+            <textarea name="mensagem" required minlength="5" rows="4" placeholder="Escreva sua mensagem"></textarea>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Enviar</button>
+          <button class="btn ghost" type="reset">Limpar</button>
+        </div>
+        <p id="formFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- ========================== NOVA IDEIA: CRONÔMETRO DE DESAFIO ========================== -->
+   
+
+  <!-- ========================== FOOTER ========================== -->
+  <footer class="footer" role="contentinfo">
+    <p>Feito com  por Kaio, Marcio e você. &middot; <a href="#home">Voltar ao topo</a></p>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+/* ====== Reset simples e variáveis ====== */
+:root{
+  --bg: #0b1220;
+  --bg-soft: #121a2b;
+  --card: #0f1628;
+  --text: #eef3ff;
+  --muted: #c6d1ffcc;
+  --primary: #6ae3ff;
+  --primary-2:#a8ffcb;
+  --accent: #ffb86b;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Poppins,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1a2650 0%, transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, #17314b 0%, transparent 60%),
+    linear-gradient(180deg, #0a0f1d, #0c1322 60%, #0b1220);
+  min-height:100vh;
+}
+
+a{color:var(--primary)}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0 0 .6rem}
+p{margin:.4rem 0 1rem;color:var(--muted)}
+
+/* ====== Acessibilidade ====== */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#000;color:#fff;padding:.5rem .75rem;border-radius:.5rem;z-index:999}
+
+/* ====== Topbar / Navbar ====== */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:1rem;
+  padding:.6rem 1rem;
+  background:rgba(10,16,29,.75);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid #ffffff14;
+}
+.brand{display:flex; align-items:center; gap:.6rem}
+.brand .logo{font-size:1.4rem}
+.topbar h1{font-size:1rem; font-weight:700; letter-spacing:.3px}
+
+nav{margin-left:auto}
+.menu{display:flex; list-style:none; gap:.6rem; padding:0; margin:0}
+.menu a{
+  display:inline-block; padding:.4rem .7rem; border-radius:.7rem;
+  text-decoration:none; color:var(--text); opacity:.85;
+}
+.menu a.active, .menu a:hover{background:#ffffff0f; opacity:1}
+.hamburger{display:none}
+
+/* ====== Buttons ====== */
+.btn{border:0; border-radius:14px; padding:.6rem 1rem; cursor:pointer; box-shadow:var(--shadow);
+  background:#ffffff10; color:var(--text); transition:.2s transform, .2s background}
+.btn:hover{transform:translateY(-1px); background:#ffffff18}
+.btn.primary{background:linear-gradient(135deg, var(--primary), var(--primary-2)); color:#00121a}
+.btn.ghost{background:#ffffff0a}
+
+/* ====== Layout ====== */
+main{max-width:1100px; margin:0 auto; padding:1rem}
+.section{margin:1.2rem 0}
+.card{
+  background: linear-gradient(180deg, #0e172a, #0a1426);
+  border:1px solid #ffffff12;
+  border-radius:18px; padding:1rem; box-shadow:var(--shadow)
+}
+
+.hero{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:1.2rem; align-items:center;
+  padding:1rem; margin-top:.8rem;
+}
+.hero-text h2{font-size:1.6rem; line-height:1.2}
+.hero-cta{display:flex; gap:.6rem; margin-top:.6rem}
+
+.characters{display:flex; gap:1rem; justify-content:center; align-items:flex-start}
+.character{background:#ffffff08; padding:.6rem; border-radius:16px; border:1px solid #ffffff12; width:100%}
+.speech{margin-top:.5rem; background:#00000033; padding:.6rem .8rem; border-radius:.8rem}
+
+/* ====== Conceitos ====== */
+.btn-row{display:flex; flex-wrap:wrap; gap:.5rem; margin:.6rem 0}
+.btn.tag{border-radius:999px; padding:.45rem .9rem}
+.concept-box{
+  min-height:110px; margin-top:.5rem; padding:1rem;
+  border-radius:14px; background:#0c162e; border:1px solid #ffffff16;
+  font-size:1rem; line-height:1.5;
+}
+
+/* ====== Editor ====== */
+/* ========= SEÇÃO EXEMPLOS ========= */
+.exemplos h3 {
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+.exemplos p {
+  margin-bottom: 1rem;
+  opacity: .9;
+}
+
+/* Grid mais moderno */
+.editor-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.pane {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.pane-title {
+  font-weight: bold;
+  color: #61dafb;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+}
+
+textarea {
+  background: #282c34;
+  color: #eee;
+  border: none;
+  resize: vertical;
+  padding: .5rem;
+  font-family: monospace;
+  font-size: .9rem;
+  border-radius: 8px;
+  min-height: 140px;
+}
+
+textarea:focus {
+  outline: 2px solid #61dafb;
+}
+
+/* Botões */
+.editor-actions {
+  margin: 1rem 0;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.preview-box {
+  margin-top: 1.5rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}
+
+.preview-box h4 {
+  color: #61dafb;
+  margin: 0 0 .5rem;
+}
+
+.preview {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+}
+
+
+/* ====== Quiz ====== */
+.quiz{display:grid; gap:.6rem; margin-top:.6rem}
+.question{padding:.8rem; border-radius:12px; background:#0b1832; border:1px solid #ffffff14}
+.answers{display:grid; gap:.4rem; margin-top:.4rem}
+.answers button{justify-self:start}
+.feedback{margin-top:.3rem; font-weight:600}
+.correct{color:#9cffd1}
+.incorrect{color:#ff9fa0}
+
+/* ====== Form ====== */
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:.8rem}
+.form-grid label{display:flex; flex-direction:column; gap:.3rem}
+input, textarea{
+  padding:.6rem .7rem; border-radius:12px; border:1px solid #ffffff18;
+  background:#081226; color:var(--text)
+}
+.form-actions{display:flex; gap:.6rem; margin-top:.6rem}
+.form-feedback{min-height:1.2rem}
+
+/* ====== Footer ====== */
+.footer{padding:1rem; text-align:center; color:#a6b3d6; opacity:.9}
+
+/* ====== Util ====== */
+.back-to-top{
+  position:fixed; right:1rem; bottom:1rem; padding:.6rem .8rem; border-radius:50%;
+  display:none;
+}
+.back-to-top.show{display:block}
+
+/* ====== Responsivo ====== */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .editor-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .topbar h1{display:none}
+  .hamburger{display:inline-block; background:#ffffff10; border:0; border-radius:10px; padding:.3rem .5rem; cursor:pointer}
+  .menu{display:none; position:absolute; right:1rem; top:3.2rem; flex-direction:column; background:#0c1426; padding:.6rem; border-radius:12px; border:1px solid #ffffff1a}
+  .menu.show{display:flex}
+}
+
+/* ====== Tema claro ====== */
+body.light{
+  --bg: #f5faff;
+  --bg-soft: #f0f6ff;
+  --card: #ffffff;
+  --text: #0e1320;
+  --muted: #26334ecc;
+  --primary: #0078ff;
+  --primary-2:#41d1ff;
+  --accent: #ff8a00;
+  background: linear-gradient(180deg, #f8fbff, #edf3ff);
+}
+body.light .card{border-color:#00000010}
